@@ -1,3 +1,5 @@
+[Bodor A3 Photonics 1kW Guide](./Bodor_A3_Photonics_1kW_Guide.md)
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/kyklish/kyklish.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
