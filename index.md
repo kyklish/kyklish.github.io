@@ -1,5 +1,5 @@
 # Work
-[Bodor A3 Photonics 1kW Guide](./Bodor_A3_Photonics_1kW_Guide/Bodor_A3_Photonics_1kW_Guide)
+[Bodor A3 1kW Guide](./Bodor_A3_1kW_Guide/Bodor_A3_1kW_Guide)
 
 ## Welcome to GitHub Pages
 
