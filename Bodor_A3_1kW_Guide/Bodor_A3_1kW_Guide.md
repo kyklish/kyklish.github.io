@@ -8,6 +8,11 @@
 - [Обслуживание.](#обслуживание)
 - [Пробитие.](#пробитие)
 - [Разное.](#разное)
+- [Документация.](#документация)
+  - [Startup sequence.](#startup-sequence)
+  - [Shutdown sequence.](#shutdown-sequence)
+  - [Optical center inspection (recommended parameters).](#optical-center-inspection-recommended-parameters)
+  - [Tips.](#tips)
 - [Симулятор на ПК.](#симулятор-на-пк)
 - [Медиа.](#медиа)
 
@@ -28,7 +33,7 @@
 1. Включить вводной автомат (коробка на стене справа от станка).
 2. Проверить уровень жидкости (с тыльной стороны шкафа) в системе жидкостного охлаждения (шкаф с вентилятором на крыше (*Chiller*)). Летом вода, зимой 30% раствор спирта. Будет пищать при недостаточном уровне жидкости.
 3. Включить стабилизатор напряжения (большой автомат внутри шкафа, сам шкаф справа от чиллера).
-4. Включить станок (сзади станка красная круглая рукоятка, повернуть на 90гр. по часовой стрелке).
+4. Включить станок (сзади станка красная круглая рукоятка).
 5. Запустить ПО **BodorThinker3.0**.
 6. Вкрутить редуктор, открыть баллон с газом, установить редуктором нужное давление (O2 = 8атм, N2 = 16атм). O2 для стали и нержавейки, N2 для алюминия и нержавейки. Можно открыть сразу оба баллона, станок выберет нужный газ в соответствии с заданным газом в настройках **Layer** ![](./Icon/Layer.png). Настройка давления N2 (O2 не настраивать!!!):
    1. Один оператор выставляет 20атм на редукторе.
@@ -68,12 +73,12 @@
     4. Задать порядок заполнения листа (*Start Pos*): нижний-правый (ноль станка и упоры справа, возле монитора).
     5. Опционально задать авто-обрезку листа для получения ровных отходов (Generate Remnant):
        1. Тип отходов (*Remnant Type*): L-образные, T-образные, прямоугольные.
-       2. Отступ от деталей, на котором будет произведен рез (*Cut Distance*) для выравнивания отходов: 3мм. Отступ должен быть равен или больше длины *врезки* (если врезка делается под 90гр, иначе длину врезки нужно умножить на синус угла врезки, чтобы получить расстояние начала врезки от кромки детали) в деталь. Иначе, при последующих операциях с деталями, ПО будет ругаться, что линии реза пересекаются и их нужно корректировать (появится окно с соответствующим предложением).
+       2. Отступ от деталей, на котором будет произведен рез (*Cut Distance*) для выравнивания отходов: 3мм. Отступ должен быть равен или больше длины *врезки* (если врезка делается под 90°, иначе длину врезки нужно умножить на синус угла врезки, чтобы получить расстояние начала врезки от кромки детали) в деталь. Иначе, при последующих операциях с деталями, ПО будет ругаться, что линии реза пересекаются и их нужно корректировать (появится окно с соответствующим предложением).
     6. Запустить размещение.
     7. Если детали не влезли на один лист, появится столько листов, сколько нужно.
 8. Задать *врезку* сразу для всех деталей (выделить **Ctrl+A**), иконка **Lead** ![](./Icon/Lead.png):
     1. *Lead-in -> Type*: Line.
-    2. *Lead-in -> Angle*: 90гр.
+    2. *Lead-in -> Angle*: 90°.
     3. *Lead-in -> Length*: 3мм.
     4. *Seal -> Gap*: 1мм (величина недореза контура). Устанавливать только для наружного контура детали, маленькие отходы внутри детали пусть падают.
     5. И прочие параметры по вкусу.
@@ -167,6 +172,72 @@ Materials: Carbon Steel (Cs) Черный метал, Stainless Steel (Ss) Не�
 13. ![](./Button/Lock.png) блокирует ПО, пароль **123456**.
 14. Имея DXF файл можно заранее открыть его в ПО на ПК и добавить *врезку*, *перемычки* с *врезками* и прочее что нужно. Сохранить в NCEX и открывать уже готовую деталь на станке, удобнее и быстрее.
 
+# Документация.
+
+Длина волны излучения: 1070 нм. (Сайт лазерного источника).
+Laser wavelength is 1.064um. (Документация со станком).
+
+We do not recommend cutting high-reflective materials for a long time because they can easily cause fire and damage to the laser and fiber.
+
+At the time of cutting highly reflective materials such as copper and aluminum, we do not recommend long-term cutting.
+
+If an operator looks at the processing position for a long time, visible rays may cause damage to the operator. Especially, plasma produced in the high-speed cutting process or manufacturing of galvanized steel plate, titanium, aluminum and high-quality steel, produces bright light, may cause permanent damage to the retina.
+
+The A series products are the equipment for cutting metal materials with a laser. The A series products shall not be used for cutting non-metals (e.g. glass, acrylic materials, wood, etc.)!
+
+Compressed air: which is required to be clean, water-free, oil-free and free from other impurities, and used for thin carbon steel, thin stainless steel, etc. where conditions permit.
+
+The oxygen is mainly used for cutting plain carbon steel, and the nitrogen for cutting non-ferrous metals, e.g. stainless steel and alloy steel.
+
+The centralized lubrication system automatically oils to the sliding blocks.
+
+We recommend completely replacing water in the water-cooling machine every two to three months.
+
+There will be two air tubes led from the lathe bed, one of which is used for connecting nitrogen (which is also used by compressed air), and the other pipe is used for connecting oxygen.
+
+The temperature of the gas used shall not exceed 50℃.
+
+Do not turn on the fiber optic device before the water temperature rises to 20℃ if the water temperature is low.
+
+## Startup sequence.
+
+1. Host and operational software.
+2. Air feeder.
+3. Water cooler.
+4. Fiber optic device.
+
+We recommend conducting a calibration operation every time after starting up or replacing the metal plates.
+
+We do not have any strict requirement for the startup sequence of each component.
+
+## Shutdown sequence.
+
+1. After the processing is completed, please click **N2** or **Air**/**O2** to release the gas in each gas tube and close the gas supply device.
+2. You need to stick the tape under the nozzle of the cutting head to prevent the dust in the air from entering the cutting head.
+3. Move the X Axis and Y Axis to the middle of the machine tool to prevent the transmission shaft from deforming as a result of its own gravity, thereby affecting the cutting accuracy.
+4. After turning off the laser output of the laser, you need to disconnect the power supply.
+5. You need to disconnect the power supply after turning off the switch on the water cooler.
+6. Close out of the control software and power off the host of computer.
+7. To prevent fire and eliminate potential safety hazards, please check the surrounding environment of the machine tool to see whether there are fire or high temperature objects.
+
+
+## Optical center inspection (recommended parameters).
+
+1. Appropriate power (80-100W).
+2. Nozzle with a diameter of 1.0
+3. Focus shall be between -1 to 1.
+4. In this way, small light points are easy to be observed.
+
+It is recommended that the actual cutting height is between 0.5 and 1.5mm. If the actual cutting height is not accurate, the calibration shall be carried out.
+
+The operating environment is 10℃ ~ 35℃.
+
+## Tips.
+
+1. We recommend that the layout spacing is ≥0.8 time the thickness of the plate to avoid thermal deformation and poor cutting.
+2. The intensive cutting within a small range of this processing method will cause damage to the lathe bed (рама станка) and the countertop (игольчатый настил на раме), which is not covered by the product warranty.
+3. In the event of long-stroke continuous cutting (single cutting straight line > 2m), thermal deformation of the plate will affect the final straightness, which is not covered by the product warranty.
+
 # Симулятор на ПК.
 
 Не нажимать на кнопку **Go Home** ![](./Button/GoHome.png) в программе на ПК. Симулятор будет пытаться загнать голову в бесконечность!!! После этого кнопка **Zero** ![](./Button/Zero.png)также начинает двигать голову в бесконечность.
@@ -196,3 +267,7 @@ Materials: Carbon Steel (Cs) Черный метал, Stainless Steel (Ss) Не�
 Устройство головы:
 
 ![](./Image/A4PlusHead.png)
+
+Рама и рабочий стол:
+
+![](./Image/LatheBad.jpg)
