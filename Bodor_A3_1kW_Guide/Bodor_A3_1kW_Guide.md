@@ -262,7 +262,11 @@ The operating environment is 10℃ ~ 35℃.
 
 Оптоволоконный лазерный источник Maxphotonics:
 
-![](./Image/FiberOpticLaserSouceMaxphotonics.jpg)
+![](./Image/FiberLaserSouceMaxphotonics.jpg)
+
+ПO для настройки лазерного источника (для работы станка не нужно, можно закрывать при запуске ПК):
+
+![](./Image/FiberLaserApplication.jpg)
 
 Устройство головы:
 
