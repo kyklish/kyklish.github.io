@@ -14,6 +14,8 @@
   - [Startup sequence.](#startup-sequence)
   - [Shutdown sequence.](#shutdown-sequence)
   - [Optical center inspection (recommended parameters).](#optical-center-inspection-recommended-parameters)
+  - [Calibrate capacitance.](#calibrate-capacitance)
+  - [Power curve.](#power-curve)
   - [Tips (official doc).](#tips-official-doc)
 - [Симулятор на ПК.](#симулятор-на-пк)
 - [Термины (интернет).](#термины-интернет)
@@ -179,10 +181,11 @@ Materials: Carbon Steel (Cs) Черный метал, Stainless Steel (Ss) Не�
 10. Если станок остановили во время выполнения программы, можно кнопками **⏪** и **Fn+⏪** (активирует **⏩**) перемещать голову станка по контуру реза (перемотка программы вперед и назад). Перемотав программу, можно возобновить работу кнопкой **Resume** ![](./Button/Resume.png) (дорезав неразрезанную деталь или пропустив ненужную деталь).
 11. При первом перемещении головы после включения станка по X или Y может произойти рассинхронизация энкодеров. Станок начнет вибрировать и издавать характерные звуки заклинивания направляющих, как будто направляющая заедает то с одной стороны, то с другой. В этом случае остановить перемещение. Полностью выключить станок (электрическую часть) и включить снова. Перемещение должно стать нормальным.
 12. Вместо кислорода можно применять обычный воздух, винтовой компрессор отечественного производства на 15атм стоит 6500$.
-13. ![](./Button/Fan.png) включить вручную вентилятор вытяжки (в настройках задано автоматическое включение при начале резки).
+13. ![](./Button/Fan.png) вручную включить вентилятор вытяжки (в настройках задано автоматическое включение при начале резки).
 14. ![](./Button/Lock.png) блокирует ПО, пароль **123456**.
 15. Имея DXF файл можно заранее открыть его в ПО на ПК и добавить *врезку*, *перемычки* с *врезками* и прочее что нужно. Сохранить в NCEX и открывать уже готовую деталь на станке, удобнее и быстрее.
 16. **BodorThinker3.0** это ребрендинг оригинального **NcEditor** от **Weihong**.
+17. ![](./Button/LowerIn.png) ![](./Button/UpperIn.png) для профессиональных моделей станков (model P), в которых есть два подвижных стола, один над другим. Нажатие на кнопку указывает, какой стол будет рабочим (один стол уезжает в заднюю часть станка, а другой приезжает в переднюю часть станка под голову лазера).
 
 # Документация.
 
@@ -213,7 +216,11 @@ Do not turn on the fiber optic device before the water temperature rises to 20�
 
 Before processing, you need to make sure that the workpiece graphics can safely run within the plate. Measures should be taken to prevent the laser cutting head from descending and impacting outside the plate to block the blade after starting to cut, thereby damaging the laser cutting head.
 
+To execute breakpoint resume when the power interruption or E-stop occurs and the workpiece origin is secured, press ![](./Button/Resume.png). Note: Before executing breakpoint resume, please make sure the machine coordinate is correct. Otherwise, please execute returning to the machine origin first (**Go Home**).
+
 Remote key combination ![](./Button/Remote/Rapid.png) + any arrow key or ![](./Button/Remote/Step.png) + any arrow key temporary enable **Rapid** or **Step** mode.
+
+**Note. When changing the nozzle or adjusting the center of the beam manually, the laser shutter ![](./Button/Shutter.png) should be closed manually to ensure the safety of the operator.**
 
 When the nozzle or sensor touches the machine or plate, the laser head will feed back the collision electronic signal to the system thanks to the use of the distance sensing system, thereby stopping the action.
 
@@ -271,7 +278,17 @@ We do not have any strict requirement for the startup sequence of each component
 3. Focus shall be between -1 to 1.
 4. In this way, small light points are easy to be observed.
 
+## Calibrate capacitance.
+1. Move the cutting head to the position about 5mm far from the workpiece surface, and keep the workpiece still all the time.
+   1. If you have never calibrated capacitance, click Z axis direction button to change height.
+   2. Click **Calibrate**.
+2. If you have calibrated capacitance before, click **One Key Calibrate**.
+
 It is recommended that the actual cutting height is between 0.5 and 1.5mm. If the actual cutting height is not accurate, the calibration shall be carried out.
+
+## Power curve.
+
+Used to make the cutting power and frequency change with the cutting speed accordingly and make sure thermal power absorbed in unit area is the same and achieve fine cutting result, so as to solve problems like over-burning around the corner and different cutting results in terms of thickness. Open **Layer** settings, find **Cutting Power Curve** area. To adjust speed power and speed frequency, check **Adjust Speed Power** and **Adjust Speed Frequency** in **Power Curve** area. The system makes the cutting power and cutting frequency change with the cutting speed during cutting. Otherwise, the cutting power and cutting frequency keep the same all the time during cutting.
 
 The operating environment is 10℃ ~ 35℃.
 
