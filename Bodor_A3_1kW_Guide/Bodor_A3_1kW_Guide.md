@@ -440,6 +440,10 @@ The operating environment is 10℃ ~ 35℃.
 
 ![](./Image/NozzleDouble.jpg)
 
+Повреждение сопла:
+
+![](./Image/NozzleDamage.jpg)
+
 Чиллер:
 
 ![](./Image/Chiller.jpg)
@@ -459,6 +463,12 @@ The operating environment is 10℃ ~ 35℃.
 Положение фокуса:
 
 ![](./Image/FocusPosition.png)
+
+![](./Image/FocusLocation.png)
+
+Пробитие (прокол):
+
+![](./Image/Piercing.png)
 
 Рама (портал) и рабочий стол:
 
