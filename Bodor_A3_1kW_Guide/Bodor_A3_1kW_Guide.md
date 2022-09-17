@@ -223,6 +223,14 @@
 
 *Cut Direct*: X:negative to positive - первый рез пойдет от нуля в негативную сторону, второй рез пойдет от нуля в позитивную сторону. Ноль это текущее положение головы!
 
+Источник: **lc80ef-operation-manual.pdf**
+
+![](./Image/CutSheetThin.png)
+
+![](./Image/CutSheetCoarse.png)
+
+![](./Image/CutSheetRequirements.png)
+
 # Окончание работы
 
 1. Закрыть баллоны с газом, выкрутить редукторы (вывести пружину из работы).
