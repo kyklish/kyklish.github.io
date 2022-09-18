@@ -177,6 +177,17 @@
 13. **System Parameters -> 4.0.0 General -> Automatically switch to the calibration data interface during calibration -> Yes** относится только к кнопке ![](./Button/Calibrate.png), и не работает для **One Key Calibrate** при запуске с пульта :(.
 14. После нажатия горячей клавиши для выбора инструмента (отсечение линии, сегментация линии, прочее...) курсор мыши не изменяется, нужно передвинуть курсор и тогда он поменяется на изображение инструмента, просто пиздец.
 15. **Datum Copy (Ctrl + Shift + C)** позволяет задать базовую точку при копировании и объекта. Эта же точка будет использоваться для вставки объекта.
+16. **Sort -> Advanced Options -> Divide Grid**:
+    1. **AutoSet**: to automatically divide objects into the same group based on the distance and count.
+    2. **Fixed Value**: the objects whose distance is less than the set value will be divided into the same group.
+
+    Sort *First Bottom*, *Divide Grid* Disabled.
+
+    ![](./Image/SortFirstBottomDivideGridDisable.png)
+
+    Sort *First Bottom*, *Divide Grid -> Fixed Value* Enabled.
+
+    ![](./Image/SortFirstBottomDivideGridEnable.png)
 
 # Изменение рабочих координат
 
