@@ -563,6 +563,10 @@ The operating environment is 10℃ ~ 35℃.
 
 ![](./Image/Chiller.jpg)
 
+Laser QCW Mode:
+
+![](./Image/LaserQCW.png)
+
 Оптоволоконный лазерный источник Maxphotonics:
 
 ![](./Image/FiberLaserSourceMaxphotonics.jpg)
