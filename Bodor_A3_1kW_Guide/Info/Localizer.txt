@@ -1,0 +1,42 @@
+﻿.\BodorThinker3.0\Bin\Tools\Localizer\LocalizerV3.exe
+
+File
+	Open:
+		Document
+		Project
+	Save:
+		Save as Excel
+		Save as resource
+	Exit:
+
+View:
+	ToolBar
+	StatusBar
+	Navigation (left sidebar)
+	Content (table with translation)
+
+Column name in table with translation:
+	Name, Is Modified, Value, New Value
+
+Right click menu on resource file (left sidebar):
+	Generate
+	Delete ---> The system will clean up all changes of the current resource object, are you sure?
+	Match  ---> Open, Match ---> Matching is complete, note the modification status in the view.
+
+Save Dialog Window:
+---------------------------------------------------------
+|	Current selected item: (*.resx)						|
+|	Language: 								[Browse]----|-->Select the path where the resource is generated
+|	Generate path:							[Generate]	|
+---------------------------------------------------------
+
+
+Весь текст (названия кнопок, меню, текст в окнах и прочее) находится в файле ресурсов:
+	.\BodorThinker3.0\Bin\Resources\StringResources.ru-RU.resx
+Остальные файлы *.resx под другими именами в этой же папке и в других папках не используются, наверно они сделаны для удобства группировки текстовых строк во время разработки ПО, или можно по отдельности их переводить и позже сливать в один файл перевода.
+Если нужно искать русский текст внутри файлов используя поиск TotalCommander, то нужно ставить галочку напротив UTF-8, иначе ничего не найдет.
+Если файл содержит иероглифы (например LUA скрипты), то у него своя кодировка:
+	AkelPad -> 936 (ANSI/OEM - Simplified Chinese GBK)
+	Total Commander -> F3 -> Вид (только текст), Кодировка (Китайский упрощенная 936)
+Часть текста для NcEditor находится в файлах строк с кодировкой UTF-16:
+	.\BodorThinker3.0\Bin\NcEditor\res\NcEditor*.string

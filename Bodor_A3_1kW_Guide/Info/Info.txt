@@ -1,0 +1,99 @@
+﻿Пароли:
+
+Lock Password: 123456
+Modify Task Number Dialog Password: mybodor
+Manufacturer Password: bodor
+
+SoftwareLock.mod содержит пароль в открытом виде.
+ModifyTaskNumberDialog.xaml.lua содержит пароль в открытом виде.
+Setting.zua содержит пароль в открытом виде.
+
+
+
+
+Доступ к сервисным настройкам без ввода пароля (Manufacturer):
+C:\Program Files\BodorThinker3.0\BodorThinker3.0\UI\Scripts\ViewScripts.lua - этот скрипт содержит функцию проверки пароля, комментируем проверку и всегда возвращаем позитивный результат.
+
+Password = {
+		ShowPasswordDialog = function()
+			-- return Input.ShowDialog("NcStudio", Phoenix.G.Setting.UIDir .. "Pages\\DialogBox\\PasswordDialog.xaml","Manufacturer")		
+			return "Yes"
+		end,
+
+		...
+}
+
+
+
+
+Установка:
+
+Оболочка BodorThinker имеет встроенный инструмент для создания установочного файла.
+В него будут входить текущие параметры станка, но не будут включены параметры "Слоев".
+"Слой" содержит параметры резки для заданного материала, они хранятся в папке LayerTechnics:
+D:\BodorThinker3.0\Plane\TechnicLibrary\LayerTechnics\*.ltpx
+
+Для информации:
+D:\BodorThinker3.0\Plane\TechnicLibrary\Materials\Materials.dat - материалы и применяемые сокращения.
+
+Пробовал менять пути в разных файлах конфигурации. Не помогло.
+Путь "C:\Program Files\BodorThinker3.0\" прописан в коде очень многих файлов.
+Путь "D:\BodorThinker3.0\" прописан в коде очень многих файлов.
+
+Программу и настройки можно перенести на другой диск только символьными ссылками.
+Перенес все на F: и создал ссылки на C: и D:.
+
+Минимально необходимые папки для работы:
+Настройки:
+F:\GAMES\BodorThinker3.0_DATA\BodorThinker3.0\
+	ActiveConfig\
+	Local\
+	OEMConfig\
+ПО:
+F:\GAMES\BodorThinker3.0\
+	AddIns\
+	Bin\
+	Data\
+	DefaultConfig\
+	Tocs\
+	UI\
+На диске D: папку NcCloud можно удалить.
+
+
+
+
+Ошибки и предупреждения при запуске ПО и их устранение:
+
+Alarm message E006: Handweel communication exception. Please check USB antenna of handweel.
+System -> System Parameters... -> (Operator Settings) -> 4.0.0 General -> Enable Handwheel -> No
+
+Alarm window "No task list number exist in current machine".
+System -> System Parameters... -> (Manufacturer Settings) -> 4.0.0 General -> Enable Task Number -> No
+or
+Help -> About -> Task No... -> Modify... -> Any number -> PSW: mybodor
+
+
+
+
+HotKeys:
+
+Сделать поиск в Total Commander с текстом "HotKey".
+
+Прописаны в LUA скриптах меню (вызов соответствующих пунктов меню):
+F:\GAMES\BodorThinker3.0\UI\Pages\Menus\*.xaml.lua
+В переводе (влияет ли на что-то?):
+F:\GAMES\BodorThinker3.0\Bin\Resources\StringResources.en-US.resx
+В скриптах UI страниц (нажатие кнопок в самих диалоговых окнах, установка фокуса на кнопку и прочее...):
+F:\GAMES\BodorThinker3.0\папки разной вложенности\*.xaml
+
+
+
+
+Tools:
+F:\GAMES\BodorThinker3.0\Bin\NcTune.exe (use Manufacturer password, Alt + (H)elp + (L)anguage + (E)nglish переключит на английский язык, низкоуровневые настройки станка)
+
+
+
+
+Случайно найденные горячие клавиши:
+Ctrl + Shift + D - Debug Lua
