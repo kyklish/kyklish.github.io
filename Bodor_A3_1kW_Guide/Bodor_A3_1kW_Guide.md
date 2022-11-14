@@ -140,6 +140,14 @@
 
 ![](./Image/NestCoEdgeRemnant.png)
 
+![](./Image/NestCoEdgeTypeC.png)
+
+![](./Image/NestCoEdgeGrid.png)
+
+![](./Image/NestCoEdgeCollision.png)
+
+![](./Image/NestCoEdgeSort.png)
+
 ## Доработка готовой детали
 
 1. Вариант 1.
