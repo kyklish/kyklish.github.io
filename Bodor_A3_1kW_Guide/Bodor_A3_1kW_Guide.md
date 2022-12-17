@@ -392,6 +392,7 @@ a certain distance. After jog cutting ends, the checking status will be canceled
 35. **BodorThinker3.0\Bin\NcEditor\res\UserManualRes_ENG.chm -> 7.5. List of System Parameters**.
 36. Центровка на акриловой пластине: **ml2512ex-f_ml3015ex-f_service-manual.pdf** (раздел 5.3).
 37. Чистка защитного стекла: **ml3015sr-f20_service-manual.pdf** (раздел 4.1).
+38. Иногда после импорта файла детали контура находятся в разных слоях (отображаются разными цветами). Каждый слой имеет свои настройки реза. Желательно скопировать настройки первого слоя во все другие слои (делается одним нажатием кнопки в **Layer**), чтобы случайно не запороть работу.
 
 ## Освобождение угла
 
