@@ -599,6 +599,10 @@ The operating environment is 10℃ ~ 35℃.
 
 ![](./Image/NozzleDamage.jpg)
 
+Повреждение фокусной линзы (пятно лазера на белой бумаге):
+
+![](./Image/FocusLensBad.jpg)
+
 Чиллер:
 
 ![](./Image/Chiller.jpg)
